@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 
 const ProductList  = (props) => {
-    console.log('ProductList :: props- ', props)
+    console.log('ProductList :: props----------- ', props)
     return (
         <div className='productList'> 
         {
@@ -25,6 +25,7 @@ const ProductList  = (props) => {
 }
 
 const mapStateToProps = (state) => {
+    console.log('mapStateToProps--loist', state)
     return {
         photos : state.photos
     }

@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
 import './css/style.css';
-import getPhotos from './redux/actions/index';
+import { getPhotosUsingThunk } from './redux/actions/index';
 import { connect } from 'react-redux';
 
 class App extends Component {
@@ -13,8 +13,9 @@ state = {
 } 
 
 componentDidMount() {
-  console.log('componentDidMount :: props ',this.props);
-  this.props.getPhotos();
+  //console.log('componentDidMount :: props ',this.props);
+  //this.props.getPhotos();
+  this.props.getPhotosUsingThunk();
 }
 render() {
 return (
@@ -32,7 +33,8 @@ return (
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getPhotos : () => dispatch(getPhotos())
+    // getPhotos : () => dispatch(getPhotos()),
+    getPhotosUsingThunk : () => dispatch(getPhotosUsingThunk())
   }
 }
 const connectedApp = connect(null, mapDispatchToProps)(App)
