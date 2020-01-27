@@ -1,0 +1,42 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    background-color: bisque;
+}
+.appContainer {
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid red;
+    display: grid;
+    grid-template-areas: 
+     'header header'
+     'productList cart'
+     'footer footer';
+     grid-template-rows: 100px auto 100px;
+}
+.header {
+    grid-area: header;
+    border: 1px solid green;
+
+}
+
+.footer {
+    grid-area: footer;
+    border: 1px solid green;
+}
+
+.productList {
+    grid-area: productList;
+    border: 1px solid aquamarine;
+}
+.productDetails {
+    margin: 5px;
+    height: 30px;
+    border: 1px solid blue;
+    background-color: grey;
+}
