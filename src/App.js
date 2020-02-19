@@ -4,12 +4,11 @@ import Footer from './components/Footer';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
 import './css/style.css';
-import { getPhotosUsingThunk } from './redux/actions/index';
+import { getPhotosUsingThunk } from './redux/actions/productAction';
 import { connect } from 'react-redux';
 
 class App extends Component {
 state = {
-
 } 
 
 componentDidMount() {
@@ -22,7 +21,7 @@ return (
   <div className='appContainer'>  
     <Header />
     <ProductList/>
-    <Cart />
+    <Cart type={'cricket'}/>
     <Footer />
 
   </div>

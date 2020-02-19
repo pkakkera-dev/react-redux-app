@@ -1,19 +1,17 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import ProductDetail  from './ProductDetail'
 
 
 const ProductList  = (props) => {
-    console.log('ProductList :: props----------- ', props)
     return (
         <div className='productList'> 
         {
            ( props.photos && props.photos.length > 0 ) && (
                props.photos.map((photo)=>{
                 return (
-                    <div key={photo.id} className='productDetails'>
-                        {photo.title}
-                    </div>
+                    <ProductDetail key={photo.id} photo={photo}/>
                 )
                })
            )
@@ -25,10 +23,12 @@ const ProductList  = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log('mapStateToProps--loist', state)
+    console.log('mapStateToProps-- productlist - state ::', state)
     return {
-        photos : state.photos
+        photos : state.photoReducer.photos
     }
 }
+
 const connectedProductList = connect(mapStateToProps)(ProductList);
 export default connectedProductList;
+//const connectedProductDetail = connect(mapDispatchToProps)(ProductDetail)

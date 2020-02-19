@@ -3,7 +3,9 @@ import React from 'react';
 
 const Footer  = (props) => {
     return (
-        <div className='footer'> Footer </div>
+        <div className='footer'> 
+            <div className='sub-footer'> Footer </div>
+        </div>
     )
 }
 
